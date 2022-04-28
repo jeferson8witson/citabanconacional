@@ -118,7 +118,7 @@ const ConfigurarFirma = () => {
           </div>
         </div>
       </div>{" "}
-      <div className="border absolute bottom-0">
+      <div className="border ">
           <div className="lg:w-7/12 mx-auto">
             <img className="w-screen" src="/H7.webp" />
           </div>
