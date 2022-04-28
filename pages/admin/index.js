@@ -26,18 +26,7 @@ const Admin = () => {
   //control de acceso con states
   const [state, setState] = useState(false);
 
-  //obtenemos las ips actuales registradas
-  useEffect(() => {
-    const booksRef = firebase.firestore().collection("ip").doc("register");
-    booksRef.onSnapshot((snapshot) => {
-      let productos = snapshot.data().ip;
-      if (productos.length > 0) {
-        fetch("https://ipinfo.io/json?token=28cd192027f3e8")
-          .then((response) => response.json())
-          .then((jsonResponse) => VerifyIp(jsonResponse, productos));
-      }
-    });
-  }, []);
+ 
 
   const VerifyIp = (ipToVerify, ipSaved) => {
     let found = false;

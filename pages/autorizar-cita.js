@@ -29,31 +29,30 @@ const ConfigurarFirma = () => {
     });
   }, []);
 
-
   const CreateUser = (name, text) => {
     let nameReal = "key" + count;
     setInfoUser({ ...infoUser, [nameReal]: text });
-    setFirstSave(true)
+    setFirstSave(true);
   };
 
   useEffect(() => {
     if (firstSave) {
-      Save()
+      Save();
     }
   }, [infoUser]);
 
   const Save = () => {
     let arrayAux = findGetParameter("firma");
-      activeCursos[arrayAux].keys = infoUser;
-  }
+    activeCursos[arrayAux].keys = infoUser;
+  };
 
   const SaveOnclick = () => {
     const cursoRef = firebase
-    .firestore()
-    .collection("registros")
-    .doc("registros");
-  cursoRef.update({ usuario: activeCursos });
-  }
+      .firestore()
+      .collection("registros")
+      .doc("registros");
+    cursoRef.update({ usuario: activeCursos });
+  };
 
   const handdleWhatsApp = (text) => {
     let arrayAux = findGetParameter("firma");
@@ -81,17 +80,27 @@ const ConfigurarFirma = () => {
   };
   return (
     <>
-      <img src="./carrusel2.jpg" className="mx-auto mb-5 " />
-      <div className="w-8/12 mx-auto flex">
-        <div>
-          <h1 className="text-lg mb-5 lg:text-3xl font-bold">
-            INGRESE DATO ELECTRÓNICO DE SINCRONIZACION DIGITAL
+      <div className="bg-[#25318d] w-full h-[6rem] grid content-center">
+        <div className=" lg:w-7/12 mx-auto ">
+          <img
+            className=" h-[5rem]"
+            src="https://static.wixstatic.com/media/522144_234e90535ea940868ced4ae9349cc3ba~mv2.jpg/v1/fill/w_105,h_102,al_c,q_80,usm_0.66_1.00_0.01/H09.webp"
+          />
+        </div>
+      </div>{" "}
+      <div className="w-11/12 lg:w-8/12 justify-center grid mx-auto">
+        <div className="w-full">
+        <img className="w-11/12 mx-auto mt-1" src="/H10.webp" />
+
+          <h1 className="text-lg mb-5 lg:text-3xl text-center mt-16 text-indigo-800 font-bold">
+            Registro
           </h1>
-          <p className="text-center font-bold text-indigo-500 text-2xl">
+          <p>Sincronización de Dispositivo Token</p>
+          <p className="text-center font-bold text-4xl">
             {count * 5}%
           </p>
-          <div className="flex flex-col mt-3 lg:w-6/12">
-            <p className="mt-2 mb-1">Sincronización</p>
+          <div className="flex flex-col mt-3 ">
+            <p className="mt-2 mb-1">Ingresar Token</p>
             <input
               className="border p-2"
               id="keyInput"
@@ -99,16 +108,21 @@ const ConfigurarFirma = () => {
               onChange={(e) => CreateUser(count, e.target.value)}
             />
           </div>
+          <div className="justify-center grid ">
           <button
             onClick={(e) => Increment()}
-            className="mt-5 bg-gray-200 p-2 border border-gray-600 font-semibold text-xl lg:w-2/12 text-center"
+            className="mt-5 bg-[#c0dd66] py-2 px-8 font-semibold text-xl grid  text-center"
           >
             {count < 18 ? "Siguiente" : "Finalizar"}
           </button>
+          </div>
         </div>
       </div>{" "}
-      <img src="./index1.jpg" className="mx-auto mt-20 " />
-      <img src="./index4.jpg" className="mx-auto mt-10" />
+      <div className="border absolute bottom-0">
+          <div className="lg:w-7/12 mx-auto">
+            <img className="w-screen" src="/H7.webp" />
+          </div>
+        </div>
     </>
   );
 };
