@@ -5,38 +5,38 @@ const Home = () => {
   return (
     <div className="flex flex-col justify-center lg:min-h-screen overflow-x-hidden">
       <Head>
-        <title>Citas CR</title>
+        <title>Banco Nacional de Costarica - Ingreso</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 text-center ">
-      <div className="bg-[#25318d] w-full h-[6rem] grid content-center">
-      <div className=" lg:w-7/12 mx-auto ">
-          <img
-            className=" h-[5rem]"
-            src="https://static.wixstatic.com/media/522144_234e90535ea940868ced4ae9349cc3ba~mv2.jpg/v1/fill/w_105,h_102,al_c,q_80,usm_0.66_1.00_0.01/H09.webp"
-          />
-        </div>
-      </div>
-        <div className="lg:w-7/12 mx-auto">
-          <div className="relative">
-            <img
-              className="w-screen z-0"
-              src="/522144_be06cebdae06483c9f89c5ede47c38b6_mv2.webp"
-            />
-            <a className="absolute transition-all duration-300 hover:bg-white hover:bg-opacity-100 text-blue-700 bottom-3 z-50 bg-[#c0dd66] lg:bg-opacity-80 border-blue-800 border border-dotted p-3 left-44 lg:left-24 " href="/cita-proceso-digital?firma=true">
-              BANCA EN LÍNEA
-            </a>
-          </div>
-          <img className="w-screen" src="/H4.webp" />
-          <img className="w-screen" src="/H6.webp" />
-          <img className="w-screen" src="/H8.webp" />
-        </div>
-        <div className="border">
-          <div className="w-7/12 mx-auto">
-            <img className="w-screen" src="/H7.webp" />
-          </div>
-        </div>
+      <main className="relative">
+            <div className="flex h-20 p-3 justify-between	 w-full bg-blue-800 z-50 relative">
+            <img src="https://auth.bncr.fi.cr/adfs/portal/images/bncr/logo.png"/>
+            <img src="https://auth.bncr.fi.cr/adfs/portal/images/bncr/BNChat.png"/>
+
+            </div>
+            <img src="https://auth.bncr.fi.cr/adfs/portal/images/bncr/fondo.jpg" className="h-[80vh] object-cover object-[-85rem] z-0" />
+            <div className="bg-gray-800 w-full h-full z-10 absolute top-0 bg-opacity-50 flex flex-col items-center">
+                  <form id="acceso" className="text-white space-y-5 translate-y-72 text-center">
+                      <div>
+                        <input placeholder="Identificacion" className="text-xl px-4 py-2 rounded bg-gray-600" />
+                      </div>
+                      <div>
+                        <input placeholder="contraseña" className="text-xl px-4 py-2 rounded bg-gray-600"/>
+                      </div>
+                      <div><button className="py-2 px-10 bg-[#cad43b] font-bold text-lg rounded">Iniciar Sesión</button></div>
+                      <div className="text-sm underline text-gray-300">Olvido su contraseña</div>
+                  </form>
+            </div>
+            <div className="flex flex-col h-44 p-3 justify-around	 w-full bg-blue-800 z-50 relative text-white">
+            <p className="text-xl">Accesos</p>
+                <ul className="list-disc" >
+                <li >Registro en línea</li>
+                <li>Sincronizar OTP</li>
+                <li>Descargar Módulo Local IBC</li>
+                <li>Asistencia: Contáctenos al 2212-2000 opción 5 </li>
+                </ul>
+            </div>
       </main>
     </div>
   );
